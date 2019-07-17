@@ -202,7 +202,12 @@ var uiController = (function() {
         document.querySelector(DOMStrings.budgetLabel).textContent = obj.budget;
         document.querySelector(DOMStrings.incomeLabel).textContent = obj.totalInc;
         document.querySelector(DOMStrings.expensesLabel).textContent = obj.totalExp;
-        document.querySelector(DOMStrings.percentageLabel).textContent = obj.percent;
+
+        if (obj.percentage > 0) {
+          document.querySelector(DOMStrings.percentageLabel).textContent = obj.percent + '%';
+        } else {
+          document.querySelector(DOMStrings.percentageLabel).textContent = '---';
+        }
 
       },
 
